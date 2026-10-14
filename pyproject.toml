@@ -1,0 +1,37 @@
+[project]
+name = "production-api"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Shahbaj Sheikh", email = "thisisshahbaj@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi>=0.141.1",
+    "langchain-anthropic>=1.7.1",
+    "langchain-openai>=1.6.2",
+    "langgraph>=1.2.11",
+    "langsmith>=0.12.2",
+    "pydantic-settings>=2.15.0",
+    "python-dotenv>=1.2.3",
+    "slowapi>=0.1.10",
+    "uvicorn>=0.52.4",
+]
+
+[project.scripts]
+production-api = "production_api:main"
+
+[build-system]
+requires = ["uv_build>=0.12.3,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
